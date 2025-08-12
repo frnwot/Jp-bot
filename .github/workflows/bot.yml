@@ -1,0 +1,26 @@
+name: PJ Bot Deployment
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+      - run: npm ci
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@v1.0.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /var/www/pj-bot
+            git pull
+            npm ci --production
+            pm2 restart pj-bot
