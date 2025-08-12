@@ -1,8 +1,8 @@
-# PJ Bot - Messenger Voice Bot 🤖🎤
+# pajeet Bot - Messenger Voice Bot 🤖🎤
 
 A Facebook Messenger bot that sends custom voice messages via commands, with GitHub integration for voice management.
 
-![PJ Bot Demo](https://example.com/pj-bot-demo.gif) *(Replace with actual demo image)*
+![pajeet Bot Demo](https://example.com/pj-bot-demo.gif) *(Replace with actual demo image)*
 
 ## Features ✨
 
